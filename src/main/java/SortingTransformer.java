@@ -39,7 +39,13 @@ public class SortingTransformer {
                 
                 @Override
                 public int compare(Element e1, Element e2) {
-                    return 0;
+                    double d1 = Double.parseDouble(e1.getElementsByTagName("score").item(0).getTextContent());
+                    double d2 = Double.parseDouble(e2.getElementsByTagName("score").item(0).getTextContent());
+                    if (d1 == d2)
+                        return 0;
+                    else if (d1 > d2)
+                        return 1;
+                    else return -1;
                 }
             });
             // ... and here!
